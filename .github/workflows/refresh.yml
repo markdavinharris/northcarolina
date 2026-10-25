@@ -7,6 +7,9 @@ on:
   schedule:
     - cron: '31 11-23 * * *'
     - cron: '31 0-3 * * *'
+  push:
+    # A Claude session can start a run by pushing a change to this file (it cannot press "Run workflow").
+    paths: ['build/run-now.txt']
   workflow_dispatch:
     inputs:
       force:
